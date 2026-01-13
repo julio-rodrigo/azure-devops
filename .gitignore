@@ -1,0 +1,9 @@
+# repo root
+artifact.zip
+.env
+.DS_Store
+
+# node / functions (inside src)
+src/node_modules/
+src/local.settings.json
+src/dist/
