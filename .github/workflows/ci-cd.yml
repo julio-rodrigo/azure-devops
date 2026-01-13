@@ -10,8 +10,8 @@ on:
   workflow_dispatch:
 
 env:
-  RG: rg-funcdemo-dev
-  FUNC: func-funcdemo-dev
+  RG: rg-func-ca-2aaa1c
+  FUNC: func-ca-2aaa1c
 
 jobs:
   build_and_deploy:
