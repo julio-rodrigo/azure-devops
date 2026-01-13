@@ -46,5 +46,9 @@ jobs:
 
       - name: Deploy Zip
         run: |
-          az functionapp deployment source config-zip \
-            -g "${RG}" -n "${FUNC}" --src artifact.zip
+          az functionapp deployment source config-zip -g "${RG}" -n "${FUNC}" --src artifact.zip
+      - name: Set subscription + verify target
+        run: |
+          az account set --subscription "${{ fromJson(secrets.AZURE_CREDENTIALS).subscriptionId }}"
+          az account show -o table
+          az functionapp show -g "${RG}" -n "${FUNC}" --query "{name:name, rg:resourceGroup, state:state}" -o json
