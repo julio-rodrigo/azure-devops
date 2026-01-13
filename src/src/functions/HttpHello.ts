@@ -3,7 +3,7 @@ import { app, HttpRequest, HttpResponseInit, InvocationContext } from "@azure/fu
 export async function HttpHello(request: HttpRequest, context: InvocationContext): Promise<HttpResponseInit> {
     context.log(`Http function processed request for url "${request.url}"`);
 
-    const name = request.query.get('name') || await request.text() || 'MUNDO';
+    const name = request.query.get('name') || await request.text() || 'MUNDO!!!';
 
     return { body: `Hello, ${name}!` };
 };
