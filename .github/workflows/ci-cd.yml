@@ -52,3 +52,4 @@ jobs:
           az account set --subscription "${{ fromJson(secrets.AZURE_CREDENTIALS).subscriptionId }}"
           az account show -o table
           az functionapp show -g "${RG}" -n "${FUNC}" --query "{name:name, rg:resourceGroup, state:state}" -o json
+# bump: 2026-01-13T16:37:03-06:00
